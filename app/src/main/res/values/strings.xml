@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Music Cards</string>
+    <string name="scan_button">Skenovať kartu</string>
+    <string name="scan_prompt">Namier kameru na QR kód karty</string>
+    <string name="status_playing">Prehráva sa v Spotify…</string>
+    <string name="error_not_a_song_qr">Toto nie je QR kód hracej karty.</string>
+    <string name="error_spotify_missing">Spotify aplikácia nie je nainštalovaná.</string>
+</resources>

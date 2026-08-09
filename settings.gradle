@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'music-cards'
+include ':core'
+include ':cards'
+
+// The Android module needs an SDK; skip it cleanly when none is installed so
+// that `make test` / `make cards` work on machines without the Android SDK.
+def localProps = new File(rootDir, 'local.properties')
+def sdkConfigured = System.getenv('ANDROID_HOME') != null ||
+        System.getenv('ANDROID_SDK_ROOT') != null ||
+        (localProps.exists() && localProps.text.contains('sdk.dir'))
+if (sdkConfigured) {
+    include ':app'
+} else {
+    println 'NOTE: Android SDK not found - :app module skipped (JVM modules only).'
+}

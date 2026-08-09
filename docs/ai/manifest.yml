@@ -1,0 +1,73 @@
+# Context-loading manifest for AI assistants working on music-cards.
+#
+# How to use (works for small models too — follow it literally):
+#   1. Match the task's words against `keywords` below. Ties break toward the more specific entry.
+#   2. Read the matched docs, and the AGENTS.md overlay of every module you will touch.
+#   3. Only then open source files — and only the ones you are changing.
+#   4. Before finishing, run the feedback loops for your change type (see AGENTS.md table).
+
+version: 1
+entrypoint: AGENTS.md
+
+project:
+  name: music-cards
+  description: >
+    Android companion app for a physical music quiz game. Scans QR codes
+    on paper song cards and plays the track via the installed Spotify app.
+    Java 11, Android 11+ (minSdk 30), Gradle multi-module.
+  language: java
+  modules:
+    core: pure-Java logic (JVM unit tests)
+    app: Android UI + scanning + Spotify hand-off
+    cards: JVM CLI generating printable QR card sheets
+  test: "make test"
+  build_apk: "make apk"
+
+rules:
+  alwaysApply:
+    - docs/ai/rules/code-style.md
+    - docs/ai/rules/boundaries.md
+    - docs/ai/rules/verification.md
+    - docs/ai/rules/documentation.md
+
+folders:
+  - path: core/AGENTS.md
+    appliesTo: ["core/**"]
+    keywords: [parsing, spotify link, track id, catalog, csv, song list, unit test]
+    description: Pure-Java logic; every class here must have JVM unit tests.
+  - path: app/AGENTS.md
+    appliesTo: ["app/**"]
+    keywords: [android, activity, ui, camera, scan, qr, zxing, intent, spotify app,
+               manifest, permission, layout, strings, slovak]
+    description: Android app — thin glue over core/, ZXing scanner, Spotify intent.
+  - path: cards/AGENTS.md
+    appliesTo: ["cards/**", "data/**"]
+    keywords: [cards, print, qr generation, html, sheet, songs.csv, catalog data,
+               import, playlist, exportify, merge, dedupe]
+    description: Card sheet generator, playlist importer, and the song catalog data file.
+
+docs:
+  - path: docs/architecture/overview.md
+    keywords: [architecture, overview, flow, how it works, design, decision]
+    description: End-to-end flow (card -> scan -> parse -> Spotify) and why each choice was made.
+
+feedback_loops:
+  docs_change: "make validate-ai-docs"
+  core_change: "make test"
+  any_java_change: "make build"
+  app_change: "make lint, then make apk + on-device check for behaviour changes"
+  cards_or_data_change: "make cards"
+  importer_change: "make test, then make import and review the printed warnings"
+
+gotchas:
+  - Android 11 package visibility — the <queries> block in the app manifest is required
+    for the Spotify deep link to resolve; removing it breaks playback silently.
+  - settings.gradle skips :app when no Android SDK is configured (ANDROID_HOME or
+    local.properties). JVM modules still build and test.
+  - QR payloads on printed cards are spotify:track: URIs; parsing must stay
+    backward-compatible forever (cards are physical).
+  - Track ids are exactly 22 base62 chars; SpotifyLink.parseTrackId is the single
+    validator — never re-implement link parsing elsewhere.
+  - Exportify's Release Date is the ALBUM date — compilations get the wrong year for the
+    game. ImportPlaylists marks these with '# CHECK YEAR' comments in data/songs.csv;
+    hand-edited years there are lost on the next `make import` (it overwrites the file).

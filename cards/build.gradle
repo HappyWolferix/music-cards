@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation project(':core')
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'com.google.zxing:javase:3.5.3'
+    implementation 'org.apache.pdfbox:pdfbox:2.0.31'
+}
+
+application {
+    mainClass = 'sk.musiccards.cards.GenerateCards'
+}
+
+// usage: ./gradlew :cards:run --args="data/songs.csv build/cards"
+run {
+    workingDir = rootDir
+}
+
+// duplex-printable PDF card sheets — see `make cards`
+tasks.register('cardsPdf', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'sk.musiccards.cards.GenerateCardsPdf'
+    workingDir = rootDir
+}
+
+// merges Spotify playlist exports into data/songs.csv — see `make import`
+tasks.register('importPlaylists', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'sk.musiccards.cards.ImportPlaylists'
+    workingDir = rootDir
+}
