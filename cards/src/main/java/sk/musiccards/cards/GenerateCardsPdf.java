@@ -16,6 +16,7 @@ import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import java.awt.Color;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +28,7 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import sk.musiccards.core.Song;
 import sk.musiccards.core.SongCatalog;
@@ -52,6 +54,18 @@ public final class GenerateCardsPdf {
     private static final float CARD_W = (PAGE_W - 2 * MARGIN) / COLS;
     private static final float CARD_H = (PAGE_H - 2 * MARGIN) / ROWS;
     private static final float PAD = mm(3);
+
+    // Pastel card backgrounds; kept light enough for black text to stay readable.
+    private static final Color[] CARD_COLORS = {
+            new Color(255, 205, 205), // red
+            new Color(255, 224, 178), // orange
+            new Color(255, 249, 196), // yellow
+            new Color(197, 225, 255), // blue
+            new Color(200, 230, 201), // green
+            new Color(225, 190, 231), // purple
+    };
+
+    private static final Random RANDOM = new Random();
 
     private static float mm(double v) {
         return (float) (v * 72.0 / 25.4);
@@ -111,6 +125,14 @@ public final class GenerateCardsPdf {
         PDPage pdfPage = new PDPage(PDRectangle.A4);
         doc.addPage(pdfPage);
         try (PDPageContentStream cs = new PDPageContentStream(doc, pdfPage)) {
+            for (int i = 0; i < page.size(); i++) {
+                float x = slotX(i % COLS);
+                float y = slotY(i / COLS);
+                cs.setNonStrokingColor(CARD_COLORS[RANDOM.nextInt(CARD_COLORS.length)]);
+                cs.addRect(x, y, CARD_W, CARD_H);
+                cs.fill();
+            }
+            cs.setNonStrokingColor(Color.BLACK);
             drawGrid(cs);
             for (int i = 0; i < page.size(); i++) {
                 Song s = page.get(i);
