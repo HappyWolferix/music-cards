@@ -33,7 +33,9 @@ rules:
 folders:
   - path: core/AGENTS.md
     appliesTo: ["core/**"]
-    keywords: [parsing, spotify link, track id, catalog, csv, song list, unit test]
+    keywords: [parsing, spotify link, track id, catalog, csv, song list, unit test,
+               chart, hitparada, ifpi, top 50, airplay, song key, dedupe key,
+               candidate list, wishlist]
     description: Pure-Java logic; every class here must have JVM unit tests.
   - path: app/AGENTS.md
     appliesTo: ["app/**"]
@@ -43,7 +45,8 @@ folders:
   - path: cards/AGENTS.md
     appliesTo: ["cards/**", "data/**"]
     keywords: [cards, print, qr generation, html, sheet, songs.csv, catalog data,
-               import, playlist, exportify, merge, dedupe]
+               import, merge, dedupe, chart, hitparada, ifpi, top 50, candidates,
+               wishlist, spotify link]
     description: Card sheet generator, playlist importer, and the song catalog data file.
 
 docs:
@@ -57,7 +60,7 @@ feedback_loops:
   any_java_change: "make build"
   app_change: "make lint, then make apk + on-device check for behaviour changes"
   cards_or_data_change: "make cards"
-  importer_change: "make test, then make import and review the printed warnings"
+  importer_change: "make test, then make import-charts and review the printed warnings"
 
 gotchas:
   - Android 11 package visibility — the <queries> block in the app manifest is required
@@ -68,6 +71,16 @@ gotchas:
     backward-compatible forever (cards are physical).
   - Track ids are exactly 22 base62 chars; SpotifyLink.parseTrackId is the single
     validator — never re-implement link parsing elsewhere.
-  - Exportify's Release Date is the ALBUM date — compilations get the wrong year for the
-    game. ImportPlaylists marks these with '# CHECK YEAR' comments in data/songs.csv;
-    hand-edited years there are lost on the next `make import` (it overwrites the file).
+  - IFPI chart exports (the hitparada .xls snapshots) are HTML tables, not Excel, and have no
+    track ids — they can only produce candidates (make import-charts), never cards.
+  - SK and CZ charts merge into ONE candidate file and ONE data/songs.csv; the chart a
+    file belongs to is read from its header because every download shares a filename.
+  - data/candidates.csv is both an output and an input of make import-charts, so every
+    column must round-trip — the charts column is the only wishlist marker.
+  - data/songs.csv rejects rows without a real spotify:track: link; link-less wishes
+    belong in data/candidates.csv or make cards fails.
+  - data/songs.csv is hand-maintained and no tool writes it. `make import` (which
+    regenerated it from playlist exports) was removed because it wiped hand edits —
+    do not reintroduce a generator for the catalog.
+  - The first four columns of data/candidates.csv are the catalog shape on purpose, so
+    a finished row can be copied straight across by hand.

@@ -31,9 +31,9 @@ tasks.register('cardsPdf', JavaExec) {
     workingDir = rootDir
 }
 
-// merges Spotify playlist exports into data/songs.csv — see `make import`
-tasks.register('importPlaylists', JavaExec) {
+// stages not-yet-owned songs from IFPI chart exports — see `make import-charts`
+tasks.register('importCharts', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'sk.musiccards.cards.ImportPlaylists'
+    mainClass = 'sk.musiccards.cards.ImportCharts'
     workingDir = rootDir
 }

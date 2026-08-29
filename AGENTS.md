@@ -31,6 +31,7 @@ point for all coding agents; the AI configuration lives in `docs/ai/`.
 make test    # fast loop: JVM unit tests, no Android SDK needed
 make apk     # debug APK (needs Android SDK, see RUNNING.md)
 make cards   # printable card sheets -> build/cards/cards.html
+make import-charts  # songs we still want (charts + wishlist) -> data/candidates.csv
 ```
 
 Full setup (JDK, Android SDK paths): [`RUNNING.md`](RUNNING.md).

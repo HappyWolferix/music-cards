@@ -3,7 +3,7 @@
 #   make test             fast JVM unit tests (:core, no Android SDK needed)
 #   make build            compile everything incl. the Android app
 #   make apk              debug APK -> app/build/outputs/apk/debug/app-debug.apk
-#   make import           merge Spotify playlist exports (songs/) into data/songs.csv
+#   make import-charts    merge charts + wishlist -> data/candidates.csv (songs we lack)
 #   make cards            duplex-printable PDF card sheets from data/songs.csv
 #   make cards-html       HTML preview variant of the card sheets
 #   make lint             Android lint on :app
@@ -34,7 +34,7 @@ GRADLE := ./gradlew
 
 .DEFAULT_GOAL := test
 
-.PHONY: test build apk cards cards-html import lint clean check-jdk validate-ai-docs
+.PHONY: test build apk cards cards-html import-charts lint clean check-jdk validate-ai-docs
 
 test: check-jdk
 	$(GRADLE) :core:test
@@ -47,13 +47,13 @@ apk: check-jdk
 	@echo ""
 	@echo "APK: app/build/outputs/apk/debug/app-debug.apk"
 
-# Playlist exports (Exportify CSV) to merge into data/songs.csv.
-IMPORT_SRCS := songs/czsk_vypaovaky.csv \
-               songs/sk_-_cz_hity_najlepsie_slovensk_a_esk_pesniky.csv \
-               songs/slovensk_hity_70-80-90.csv
+# Everything that feeds the candidate list: any fresh IFPI chart exports dropped in
+# data/ (SK or CZ) plus the candidate list itself. Only CSVs are kept in the repo, so
+# data/candidates.csv IS the record of past charts — keep it in this list.
+CANDIDATE_SRCS := $(wildcard data/hitparada*.xls) $(wildcard data/candidates.csv)
 
-import: check-jdk
-	$(GRADLE) :cards:importPlaylists --args="data/songs.csv $(IMPORT_SRCS)"
+import-charts: check-jdk
+	$(GRADLE) :cards:importCharts --args="data/songs.csv data/candidates.csv $(CANDIDATE_SRCS)"
 
 cards: check-jdk
 	$(GRADLE) :cards:cardsPdf --args="data/songs.csv build/cards/cards.pdf"

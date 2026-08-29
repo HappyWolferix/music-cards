@@ -10,8 +10,11 @@ Spotify app installed on the same phone (Premium account assumed).
 ## End-to-end flow
 
 ```
-songs/*.csv (Exportify playlist exports)
-     │ (make import: merge, dedupe, flag compilation years)
+data/hitparada*.xls (IFPI SK + CZ radio chart snapshots, really HTML)
+     │ (make import-charts: charts + wishlist merged, minus what the deck has)
+     ▼
+data/candidates.csv  (songs we want; no Spotify link yet)
+     │ (by hand: paste a Spotify link, copy the first four fields across)
      ▼
 data/songs.csv ──(make cards)──> build/cards/cards.pdf ──duplex print──> paper cards
                                                                        │
@@ -37,7 +40,7 @@ MainActivity ──ScanContract(ZXing)──> QR payload "spotify:track:<id>"
   A4 PDF, 4×5 = 20 cards per sheet, alternating front (title/artist/year) and
   back (QR) pages; back pages mirror column order so cards align when the sheet
   is flipped on the long edge. `GenerateCards` (`make cards-html`): HTML preview
-  + per-song QR PNGs. `ImportPlaylists` (`make import`): playlist merger.
+  + per-song QR PNGs. `ImportCharts` (`make import-charts`): chart merger.
 
 ## Decisions and why
 
@@ -63,9 +66,44 @@ MainActivity ──ScanContract(ZXing)──> QR payload "spotify:track:<id>"
 the single source of truth for the deck; the app itself ships no song data (it
 just resolves whatever QR it sees).
 
-`songs/` holds raw Spotify playlist exports (Exportify CSV format). `make import`
-(`cards/ImportPlaylists` + `core/PlaylistExport`) merges the SK/CZ ones listed in
-the Makefile's `IMPORT_SRCS` into `data/songs.csv`: dedupes by track id and by
-diacritic-folded title+artist, sorts by year, and prefixes songs whose album looks
-like a compilation with a `# CHECK YEAR` comment — Exportify only knows the album
-release date, and for this game the original year is what matters.
+`data/songs.csv` is maintained **by hand**. Nothing generates it, so nothing can
+overwrite it: rows are added by pasting a finished line from `data/candidates.csv`.
+(An earlier `make import` regenerated it wholesale from Spotify playlist exports;
+it was removed because it silently destroyed hand-edited rows and years.)
+
+IFPI publishes "SK - RADIO - TOP 50 SK" and "CZ - RADIO - TOP 50 CZ" weekly
+snapshots as `hitparada.xls` — despite the extension they are HTML tables, parsed by
+`core/ChartExport`. They carry no Spotify track id, so they can never become cards
+directly. `make import-charts` (`cards/ImportCharts`) diffs them against the catalog
+and writes `data/candidates.csv`, a shopping list ordered by best chart
+position; the ids arrive later through the playlist route above.
+
+There is one deck: SK and CZ charts merge into that single candidate file and into
+one `data/songs.csv`. A song that charted in both countries is one card — the
+`charts` column records where it appeared (`cz sk`) and the `weeks` column keeps
+every placing (`cz:201351#2 sk:202351,52#23`). Which chart a snapshot holds is read
+from its header, never from its name: every download is called `hitparada.xls`.
+
+**The repo keeps only CSVs — the raw .xls snapshots are not stored.**
+`data/candidates.csv` is therefore the durable record, and `ImportCharts` reads it
+back in as one of its own inputs (fully, before writing). Runs accumulate: dropping
+a new snapshot into `data/` adds to the list, and a song leaves it only by reaching
+the catalog or being deleted by hand. Because the file is its own input, every
+column must round-trip — the `charts` column is what tells a later run that a song
+came from a wishlist rather than a chart.
+
+There are exactly two song files: `data/songs.csv` (real cards, every row has a
+Spotify link) and `data/candidates.csv` (everything we still want). Wishlist songs
+and charted songs live together in the second one, sorted by best chart position
+with never-charted entries (position 999) last.
+
+The candidate file's first four columns are exactly the catalog shape
+(`title;artist;year;link`), so finishing a song is: paste its Spotify link into the
+link column, copy those four fields into `data/songs.csv`, delete the line. A pasted
+`https://open.spotify.com/track/...` URL is normalized to `spotify:track:<id>` on the
+next `make import-charts`, and anything unparsable is blanked so it stays visibly
+unfinished rather than silently broken.
+
+Nothing without a link may enter `data/songs.csv`: `SongCatalog` rejects a row
+without a valid `spotify:track:` link, so parking a wish there breaks `make cards`.
+That is why `data/candidates.csv` exists as the waiting room.
