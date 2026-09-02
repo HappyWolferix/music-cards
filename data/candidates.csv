@@ -12,423 +12,115 @@
 # Format: title;artist;year;link;charts;best-position;weeks;publisher
 # The first four columns are the data/songs.csv shape: fill in year and
 # link, then copy those four fields across and delete the line here.
-Perpetuum mobile;Ewa Farna;2026;https://open.spotify.com/track/54Ds61aYzZyAwKwBSS49vJ?si=7ed374236ae6408f
-Vzpomeneš si?;EWA FARNA & MIRAI;2026;https://open.spotify.com/track/6IZJzEaBEHhyc3kFFM157L?si=7fde02bb8ea74b4f
-Pridaj sa k nám (Keď sme s vami);HEX;2019;https://open.spotify.com/track/4Xah1B6sKhIgqLVbFLui0e?si=ced98bd9baa7494d
-Nič sa nemení;KALI & I.M.T. SMILE;2023;https://open.spotify.com/track/0NJQHng8dKNfJfOktO9XgF?si=a0ee2bda9e404dbd
-Cesta;KRYŠTOF & TOMÁŠ KLUS;2012;https://open.spotify.com/track/0KV8LwWowSPt8vAyn0GnNj?si=cfc97c56a51b4e31
-Moje milá;Marek Ztracený;2023;https://open.spotify.com/track/3bKNO8XETLssWVretb4uoS?si=9f53ee29f68048ab
-I přes to všechno;MIRAI;2019;https://open.spotify.com/track/5efRbEnxrNDKEql0u8Ligh?si=d1027b6619084f4d
-Popelka;XINDL X;2016;https://open.spotify.com/track/6kYUfUMJqTjkrGwwDjh8B3?si=24c8b7fcdb194cd4
-Báseň;CHINASKI;2019;https://open.spotify.com/track/7MzDlijqJojwoQHJ0hkjUl?si=b3ab7c7bb21349af
-Chýbanie;DESMOD;2017;https://open.spotify.com/track/4AQujgKKlS7R02rw3R3JYy?si=7112417d6f5c411e
-Vianočný čas;EMMA DROBNÁ;2023;https://open.spotify.com/track/1l2F9w1Y1tqdkV8eQx5u0e?si=aa5c3a226cda4278
-Naše cesty;MAREK ZTRACENÝ;2018;https://open.spotify.com/track/3NIXc097uc92QNraPOQA8K?si=0e17ff4809a0497c
-Tenkrát;MIRAI;2021;https://open.spotify.com/track/5tx1AthA32d9e87M8bSV0M?si=df946e59f1ff4794
-Prepojení;PARA;2025;https://open.spotify.com/track/0MFJPzz4W4QiXeF3IyM28Q?si=1516e3d2f69e400b
-Čoskoro;PETER BIČ PROJECT;2019;https://open.spotify.com/track/6f3SSzSqG6OWlCdmxv9hX1?si=91fcd97076954d3b
-Půlnoční;VÁCLAV NECKÁŘ & UMAKART;2012;https://open.spotify.com/track/5Thza83zbkoIupxDHf9kmq?si=3a18cfcabc454889
 
-Iskrí;ADAM ĎURICA;;
-Půlnoční hřích;KRYŠTOF & DOMINIQUE ALAGIA;;
-Každý deň budú vraj Vianoce;LOJZO & MIRO ŽBIRKA;;
-Snad se něco stane;MAREK ZTRACENÝ;;
-Asi jsem blázen;SEBASTIAN;;
-Fotky;SLZA;;
-Na vodě;XINDL X;;
-Tamagoči;ŠORTY;;
-Vánoce na míru;EWA FARNA;;
-Jediný, co chci;JELEN;;
-Bol raz kráľ;KALI & I.M.T.SMILE & PETER PANN;;
-Hvězdáři (feat. Sima Martausová);KRYŠTOF;;
-Vianočná (o prímerí);MIRO ŽBIRKA;;
-Jsem optimista;OLGA LOUNOVÁ;;
-Len sa smej;PETER BIČ PROJECT;;
-Dovolená;XINDL X;;
+Každý deň budú vraj Vianoce;LOJZO & MIRO ŽBIRKA;2007;https://open.spotify.com/track/1Brkebdy1SrMFIUK5QIU4Q
 Chlap z kríža;ŠKAMPI NA ŽARU;;
-Dovtedy;ADAM ĎURICA;;
-Na Vianoce;ADAM ĎURICA;;
-Sliby se maj plnit o Vánocích;JANEK LEDECKÝ;;
-Někde kolem;JELEN;;
-Hell.o;LENNY;;
-Naše cesty;MAREK ZTRACENÝ;;
-Nádej a Viera;MARIÁN ČEKOVSKÝ & NATAŠA DZUNKOVÁ;;
-Blízko;POETIKA;;
-Milý Budúci;CELESTE BUCKINGHAM;;
-Na nebi svítí;DAN BÁRTA;;
+Sliby se maj plnit o Vánocích;JANEK LEDECKÝ;1993;https://open.spotify.com/track/6NrF748CUGYJ7wS7GXUL7r
+Naše cesty;MAREK ZTRACENÝ;2018;https://open.spotify.com/track/3NIXc097uc92QNraPOQA8K
+Na nebi svítí;DAN BÁRTA;2007;https://open.spotify.com/track/1p7phV7ph1aeHvoIvSgIAG
 Najkrajsie Vianoce;IVAN TÁSLER & IMT SMILE;;
-Touha a pláč;JELEN;;
-Hned teď (pojď být světlometem);KRYŠTOF;;
-Freedom (feat. Dani Slovak);MARK DANN;;
-Pro Emu;MICHAL HRŮZA;;
-Všechno je v pořádku;O5 & RADEČEK;;
-Svätojánske mušky;SIMA MARTAUSOVÁ & RICHARD MÜLLER;;
-Jsem dokonalej;DOCTOR P.P.;;
-Smile;EMMA DROBNÁ;;
-Neříkej, co má se stát;EWA FARNA;;
-Príliš osobná známosť;I.M.T. SMILE & NIKOL ŠTÍBROVÁ;;
-Klidná jako voda;JELEN;;
-Život je krásný;KRYŠTOF;;
-Vánoční;KRYŠTOF/KAREL GOTT;;
-Sushi;LE PAYACO;;
-Tak se nezlob (Podpantoflák);MAREK ZTRACENÝ;;
-Naveky;ALAN MURIN;;
-Na malou chvíli;ANNA K.;;
-Stížnost!;CHINASKI;;
-Tři oříšky;IVETA BARTOŠOVÁ;;
-Papierové kone;NOCADEŇ;;
-MÁM POCIT, ŽE TĚ ZTRÁCÍM;POETIKA;;
-Záchranný bod;SEBASTIAN;;
-Puberťák;XINDL X;;
-Údolí včel;ANNA K.;;
-Crushin´ My Fairytale;CELESTE BUCKINGHAM;;
-Znova sa ma dotkni;ELÁN;;
-Ďakujem;MAJSELF & KALI & DESMOD;;
-Zima na saniach;MICHAL DOČOLOMANSKÝ;;
-OTCHI;MIRAI;;
-Pohádka;SUPPORT LESBIENS;;
-Bergen;ZUZANA SMATANOVÁ;;
-Brighter Day;BEN CRISTOVAO & SARA JAMES;;
-Sabotáž;BILLY BARMAN & BEN CRISTOVAO;;
+Všechno je v pořádku;O5 & RADEČEK;2024;
+Tři oříšky;IVETA BARTOŠOVÁ;1998;https://open.spotify.com/track/6Da7bx1uRTEhPqyMmxexYa
+Zima na saniach;MICHAL DOČOLOMANSKÝ;1993;https://open.spotify.com/track/67aKoX7wjODulBVTFC2b5B
+OTCHI;MIRAI;2019;
 My Last Song;CELESTE BUCKINGHAM;;
-Byt 66;KATEŘINA MARIE TICHÁ;;
-Stars (feat. Laniia);VIZE;;
-Svařák;WALDA GANG;;
-Dřevo;XINDL X;;
-Rituál;ADONXS & EMMA DROBNÁ;;
-Měl bych si boty zout;CHINASKI;;
 Beyond The Stars;DOMMI;;
-Budeme to stále my;I.M.T.SMILE;;
-Púšťam ťa;KALI & PETER PANN;;
-Medvídek;LUCIE;;
-Siluety;MANDRAGE;;
-Každou vteřinou;POETIKA;;
-Hořkosladký valčík;TEREZA MAŠKOVÁ;;
-Bílý den;ANETA LANGEROVÁ;;
-Všudezdejší;JELEN;;
-Oni;KATARÍNA KNECHTOVÁ;;
-Co bude pak;KRYŠTOF;;
-Ledaco;TOMÁŠ KLUS;;
-Endless Day;VERONA;;
 Someone New;DOMI BAND;;
-Špinavé objatie;INÉ KAFE;;
-Diaľky;KATARÍNA KNECHTOVÁ;;
-Plamen;KATEŘINA MARIE TICHÁ & BANDJEEZ;;
-Hvězdy;SEBASTIAN;;
-Vietor;ADAM ĎURICA;;
-Baby;EDDIE STOILOW;;
-Srdce nehasnou;KAREL GOTT/CHARLOTTE ELLA GOTTOVÁ;;
-Tak pojď hledat břeh;KRYŠTOF;;
-Modlitba za pátek;MAREK ZTRACENÝ;;
-Look Amazing;MATEJ SMUTNÝ;;
-Gone;RODAN;;
-Andělé;ATMO MUSIC;;
-Tsunami;DIVOKEJ BILL;;
-High;EMMA DROBNÁ;;
-Aj keby;I.M.T.SMILE;;
-Medzitým;INSTINCT;;
-To se mi líbí;MAREK ZTRACENÝ;;
-Vianočná;MIRO ŽBIRKA;;
-Hory;O5 & RADEČEK;;
-Solitaire;POKÁČ;;
+Vianočná;MIRO ŽBIRKA;2019;https://open.spotify.com/track/6OkEPwKbjlZTOvCheJcJEH
+Hory;O5 & RADEČEK;2023;
 Ain&039,t In LA;ADÉLA;;
-Jízdní řád;HODINY;;
 Mlha za duhou;JIŘINA ANNA JANDOVÁ;;
-Vianočná nálada;KRISTÍNA;;
-Nesmím zapomenout (Mámě);KRYŠTOF;;
-Půlnoc;POETIKA;;
-Magnetické bouře;TOMÁŠ KLUS & VĚRA MARTINOVÁ;;
-Sľub, že prežijem;ZUZANA SMATANOVÁ;;
-RYDM;ADISS & ŠORTY;;
-Cítiš;AMO;;
-PERPETUUM MOBILE;EWA FARNA;;
-Bílý kraj;JAN KALOUSEK;;
-Ještě jednu noc;JELEN;;
-Křídla;LIKE-IT;;
-Podle sebe;MARPO & RYTMUS;;
-Biela krása;NO NAME;;
+PERPETUUM MOBILE;EWA FARNA;2026;https://open.spotify.com/track/7wxWwq6Pah4Y6mqsvEWTCa
 Bella ciao;ŠKAMPI NA ŽARU;;
-Lover;LENNY;;
-Spolu;MIKAEL;;
-summer love;MIRAI;;
-Brány svaté (Halellujah);OLGA LOUNOVÁ;;
-Prach (feat. Lipo);SEBASTIAN;;
-Modlitba;VOJTĚCH DYK;;
-Môžme si už odpustiť?;ZUZANA SMATANOVÁ;;
-Domov;ALAN MURIN;;
-Láska a data;CHINASKI;;
-Take It;EDDIE STOILOW;;
-I tak to za to stojí;O5 A RADEČEK & ELLY;;
-Tak promiň;PAVEL CALLTA;;
-Hey Now;PETER BIČ PROJECT;;
+Lover;LENNY;2016;
+Brány svaté (Halellujah);OLGA LOUNOVÁ;2014;https://open.spotify.com/track/49eI2LGcMekIhIUWNTvHbN
 ILLUMIN8;DIANAH KAY;;
-Dolsin;DIVOKEJ BILL;;
-Světlo (feat. Bára Jánová);FATE MAGAZINE;;
-Horúca láska;LUKÁŠ ADAMEC;;
-LET ME DIE (feat. Giovanni Ricci);MARK DANN;;
-Kluk z plakátu;VÁCLAV NECKÁŘ & PATRICIE;;
-Run Run Run;CELESTE BUCKINGHAM;2012;
+Kluk z plakátu;VÁCLAV NECKÁŘ & PATRICIE;2016;
 Vánoční hymna;E2 CREW;;
-Vianočný Karol;HEX;;
-V dolinách;MARK VOSS feat. KAROL DUCHOŇ;;
-Staré časy (feat. Polemic);MEDIAL BANANA;;
-Aj keď ťa mám;PETER JUHÁS;;
-Dokola;TOMÁŠ KLUS;;
-KGB;ADÉLA;;
-Levandule (feat. Sebastian);ATMO MUSIC;;
-Letter To You;LENNY;;
-Vesmír;LINA MAYER;;
-Slovenská;MIRO ŽBIRKA;;
-Láva;PETER BIČ PROJECT;;
-Zkouším žít;POETIKA;;
-Insomnia Junkie;RODAN;;
-All I Can See;ŠORTY;;
-Hory medzi nami;BILLY BARMAN;;
-Dadae;CEHA & ANNABELLE;;
-Hej, sokoly!;I.M.T. SMILE & ONDREJ KANDRÁČ;;
-Samotní nejsme nic;LENKA FILIPOVÁ/LENNY;;
-Sněhulák;MICHAL HRŮZA;;
-Malinovej sirup;MIRAI;;
-Cudzinka v tvojej zemi;XINDL X & MIRKA MIŠKECHOVÁ;;
-Spolu;ADAM ĎURICA;;
-Drive (Ruhde Remix);CELESTE BUCKINGHAM;;
-Navždy mladí;HEX & EMMA DROBNÁ;;
-Anjel;KARMEN PÁL-BALÁŽ;;
-BRA3;O5 & RADEČEK;;
-White Lines;SUPPORT LESBIENS;;
-Tančíme spolu;TICHÁ KATEŘINA MARIE feat. JELEN;;
-Sloboda;BILLY BARMAN;;
-Svatý čas;DAVID DEYL;;
-Demons;EMMA DROBNÁ;;
-Priestor;LINA MAYER;;
-Dobrý kafe;LUCIE BÍLÁ;;
-Geronimo;POST-IT;;
-Na Vianoce patríme k sebe;SMOLA A HRUŠKY;;
-Heartbeat;THE CARSLEEPERS;;
-Deň, čo mal dávno prísť;GLADIATOR;;
-Ryba rybě;JANEK LEDECKÝ;;
-Ave Maria;LUCIE BÍLÁ;;
-promiň;MIRAI;;
-Vedle tebe usínám;MIRAI;;
-Kapradí;CHINASKI;;
-Milióóóny přání;CHINASKI & KATKA KNECHTOVÁ;;
-Ona se smála;MANDRAGE;;
-Slzy ženy;MARTINA PÁRTLOVÁ;;
-Světozor;MICHAL HRŮZA;;
-So In Love;NELA;;
-Na srdci (feat. Celeste Buckingham);SLZA;;
-Too Good To Be True;TOMAS ROBIN;;
-Prútikár;ZUZANA SMATANOVÁ & RICHARD AUTNER;;
-Vždycky se budeme znát;ANNA K.;;
-Lahůdky;DIVOKEJ BILL;;
-heavy hearts;eli;;
-Pieseň ranených duší;KARMEN PÁL BALÁŽ & OLIVERFROMEARTH & NO NAME;;
-Púšťam ťa;KARMEN PÁL-BALÁŽ;;
-Kdy vzlétnu já;LUCIE VONDRÁČKOVÁ;;
-Nepočítej léta, počítej přátele;NO NAME & TEREZA MAŠKOVÁ;;
-TICHÁ PIESEŇ;PETER BIČ PROJECT;;
-Horou;ZUZANA SMATANOVÁ;;
-Vzkaz v láhvi;LUCIE VONDRÁČKOVÁ;;
+Vianočný Karol;HEX;1998;https://open.spotify.com/track/0mUx3FpYjQ6kKKBurouhaf
+V dolinách;MARK VOSS feat. KAROL DUCHOŇ;2023;https://open.spotify.com/track/4I9no55FPokWqltnCbcVDL
+Hej, sokoly!;I.M.T. SMILE & ONDREJ KANDRÁČ;2017;https://open.spotify.com/track/1iHDQ530nvzDVCjWVftfdQ
+Drive (Ruhde Remix);CELESTE BUCKINGHAM;2022;https://open.spotify.com/track/6KTouQWPiFLZOURwcj2JWh
+BRA3;O5 & RADEČEK;2021;
+Deň, čo mal dávno prísť;GLADIATOR;2018;
+Ryba rybě;JANEK LEDECKÝ;1996;https://open.spotify.com/track/7zTFcEEtyeKxvRUrPIHT49
+Ave Maria;LUCIE BÍLÁ;2004;https://open.spotify.com/track/3dygxwcYtz0VAEg3N66oLp
+So In Love;NELA;2013;
+heavy hearts;eli;2020;
+Kdy vzlétnu já;LUCIE VONDRÁČKOVÁ;2013;
+Nepočítej léta, počítej přátele;NO NAME & TEREZA MAŠKOVÁ;2026;https://open.spotify.com/track/724E1sIAzSSZlt1kvEAyBv
+Vzkaz v láhvi;LUCIE VONDRÁČKOVÁ;2021;https://open.spotify.com/track/5NsqfL5Lz3jNA5x1Y1mveU
 Fight4you;MARTIN HARICH;;
-Pretekáme;NELA POCISKOVÁ;;
-Play;PAULIE GARAND;;
-Nikto nemusí byť sám;PAVOL HABERA;;
-Never Stop Trying;TIMMY WHITE;;
 Štědrej večer nastal;XINDL X;;
 I&039,m Not Sorry;CELESTE BUCKINGHAM;;
-Pouta;DAVID KOLLER;;
-Kométa (pre Gumpa);DESMOD & MAJSELF;;
-Keep It Simple;I AM KUBA;;
-Děkuju Ti;LUCIE BÍLÁ;;
 Society;MIROSLAV ŽBIRKA & KATKA KNECHTOVÁ;;
-Medzi tebou, mnou a nebom;NOCADEŇ;;
-Magnety;SLZA;;
-I Was Wrong;CELESTE BUCKINGHAM & MAJK SPIRIT;;
-Vstávej;DIVOKEJ BILL;;
 Tichá noc;JOSEF BOHOUŠ;;
-Originál;MAREK ZTRACENÝ;;
-Chci tančit;MIRAI;;
-Stín katedrál;SHALOM;;
-Sú Vianoce;UKITAS & MARK DAN;;
-Miesto pre nás;ZUZANA MIKULCOVÁ;;
-Buena Onda (feat. Eusebio);DROZĎO & DEMEX;;
-Jsou svátky;KAREL GOTT;;
-Personal Sky;LINA MAYER;;
-Motýli;MANDRAGE;;
-Bolím;MARTINA PÁRTLOVÁ;;
-Nejsi sám;MIRO ŽBIRKA feat. DAVID ŽBIRKA;;
-NATRI;SMOLA A HRUŠKY;;
-Náš příběh (feat. Marek Lambora);TEREZA MAŠKOVÁ;;
-Pomaranče z Kuby;HEX;;
+Stín katedrál;SHALOM;1995;https://open.spotify.com/track/4Lsg2RrfUDU1Ez4esQ24S0
+Buena Onda (feat. Eusebio);DROZĎO & DEMEX;2018;
+Jsou svátky;KAREL GOTT;1976;https://open.spotify.com/track/5ZI71VeOBFQ8DLF9YW4K1W
 Večer velkých přání;KATEŘINA BROŽOVÁ;;
-Primetime;MAJK SPIRIT;;
-Zastav mě;MAREK ZTRACENÝ;;
-Chocolate;MARTIN HARICH;;
-Volám;MIRAI;;
 Klid, mír a pokora;MÜLLER RICHARD & KERNDLOVÁ TEREZA;;
-Superstar Mindset;PALERMO & ISSA ME MARIO & CALL DOMINIKA & S. LAMBO;;
-Jméno;TEREZA KERNDLOVÁ;;
-Z popola je oheň;ADAM ĎURICA;;
-Vzácnej den;ANNA K.;;
+Vzácnej den;ANNA K.;1995;https://open.spotify.com/track/5J4Ul2CcLMRctFJuCu42Zq
 Hands Up;CALL ME STEVE;;
-Nádherná zář;DAVID DEYL;;
-Anjel;DESMOD;;
-Kdepak, ty ptáčku, hnízdo máš?;KAREL GOTT;;
-Psycho Love;MATEJ SMUTNÝ;;
-DIAMANTY;TEREZA KERNDLOVÁ;;
-DNES VEČER;CALL DOMINIKA & FIEDLERSKI;;
-Zvonky štěstí;KAREL GOTT;;
-Křídla z mýdla;KRYŠTOF/JAROMÍR NOHAVICA;;
-Běž;PILOT;;
-Timeless;SKYLINE;;
-Bouře;SLZA;;
-Do neba;DARA ROLINS;;
-V LETE ...;I.M.T.SMILE;;
-Marie;LUCIE;;
-Hana;LUCIE BÍLÁ;;
-Zpíváš mi Requiem;LUCIE BÍLÁ;;
-Trip;VOXEL;;
-No Common Measure;ADONXS;;
-Já sa cítim dobre;DOMINIKA MIRGOVÁ;;
-Neriešme;EGO & MONIKA BAGÁROVÁ;;
-Duše do vesmíru;HRŮZA MICHAL & KLÁRA VYTISKOVÁ;;
-Život nás má rád;KATARÍNA KNECHTOVÁ;;
-Vpoho;MICHAL HORÁK;;
-Dobré ráno;TOMÁŠ KLUS;;
-Hodný holky zlý kluky chtěj;HARLEJ;;
-Souhvězdí;HODINY;;
-Tak poď sem;IGOR KMETO & ELPE;;
-MTE4M;LICKLIP;;
+Kdepak, ty ptáčku, hnízdo máš?;KAREL GOTT;1974;https://open.spotify.com/track/0FCCrsgjgqsaqg401j0Bxj
+Zvonky štěstí;KAREL GOTT;1984;https://open.spotify.com/track/7m3RFdvEMjDiSJbIUld06r
+Marie;LUCIE;1994;https://open.spotify.com/track/5pzRCkHiDiQMcqf4ocgA3t
+Hana;LUCIE BÍLÁ;1994;https://open.spotify.com/track/47aTs70adf42fafL76XUv2
+Zpíváš mi Requiem;LUCIE BÍLÁ;1998;https://open.spotify.com/track/0uFLFQb3cuQ1jHlgA9Igtl
 I WANNA KEEP U DANCIN&039,;MATEJ SMUTNÝ;;
-Say My Name;PETER BAŽÍK;;
-Nič sa nezmení;PETER CMORIK;;
-Hvězda;PETR BENDE;;
-Náhradní díly;SEBASTIAN;;
-Taktomabyt;ANNET CHARITONOVA & BEN CRISTOVAO;;
-Daydream;LARIS DIAM;;
-Drahokamy;MIRAI;;
-Vilma;PARA feat. JANA KIRSCHNER;;
-Čas sviečok;ROBO OPATOVSKÝ & JANA KIRSCHNER;;
+Hvězda;PETR BENDE;2005;https://open.spotify.com/track/3Gpqy2KTN1au0TOjxShqod
+Čas sviečok;ROBO OPATOVSKÝ & JANA KIRSCHNER;2003;https://open.spotify.com/track/3TzZIqZlG6C8J2MpvB51YT
 Movin&039, On;SUPPORT LESBIENS;;
-My 2 jsme se našli;VOXEL/eM.;;
-Morning Blues;ANIKA IRIS;;
-Miluju Tě;JELEN;;
-Naviděnou;KRYŠTOF;;
-GenerácYa;MAJK SPIRIT;;
-Never Get Over You;MIKOLAS;;
-Láskoproud;VERONA;;
-Si pre mňa;BEÁTA DUBASOVÁ;;
-On The Menu;JAKUB ONDRA;;
-ONI;KABÁT;;
-Do nebe se propadám;KRYŠTOF;;
-Všetky oči na mne;MAJK SPIRIT;;
-Keď ťa stretnem;PARA;;
-Beautiful When You Smile;SZABO PETER & TOMAS;;
-Na dračích perutích;VESNA;;
-Vánoční přání;DAVID DEYL & KRISTÍNA;;
-Zničená zem;KATEŘINA MARIE TICHÁ;;
-Sivá;KOMAJOTA;;
-Pomalu;MAREK ZTRACENÝ;;
-Believe (Hey Hey);MIKOLAS;;
-V nebi snad ti prominou;PETR KOLÁŘ;;
-Síť;DIVOKEJ BILL;;
-Šťastné a veselé;DOMINIKA MIRGOVÁ;;
-Zub času;RICHARD MÜLLER & BANKET;;
-Let Me Know;TOMÁŠ BEZDEDA;;
-Miesta;ZUZANA SMATANOVÁ & ADAM ĎURICA;;
-Už mě nesou;DAVID STYPKA & BANDJEEZ;;
+Všetky oči na mne;MAJK SPIRIT;2013;
+Keď ťa stretnem;PARA;2004;https://open.spotify.com/track/1KBqdTRXfc9t6iH1sEfGSU
+Beautiful When You Smile;SZABO PETER & TOMAS;2013;
+Síť;DIVOKEJ BILL;2006;https://open.spotify.com/track/2aLGQrqrch3nM4JkPiArLa
 Merry Christmas;MILFAJTOVÁ SÁRA & VOLGEMUT PETR;;
 Vánoce hrajou glóriá;PETR KOTVALD;;
-Holomráz;SLZA;;
-Sme pre seba stvorení (feat. Lucie Vondráčková);SÁM SEBOU;;
-Branči Kováč;VEC;;
-V oblacích;JELEN;;
-Hľadanie;KATARÍNA KNECHTOVÁ;;
-Zůstaň tu se mnou (Za sny);KRYŠTOF;;
-Vánoce jako dřív;MAREK ZTRACENÝ & HANA ZAGOROVÁ;;
-S tebou;SLÁVKA TKÁČOVÁ;;
-Na vločce;ANNA K.;;
-Let Me;DJ CHINGY & MIŠO BIELY;;
-The Room of Ghosts;ELEVENHILL;;
+The Room of Ghosts;ELEVENHILL;2015;
 I&039,m Your Woman;ELIS MRAZ;;
-Otázka za milión;INÉ KAFE;;
-Jdem dál;NEW ELEMENT;;
+Jdem dál;NEW ELEMENT;2016;
 Vánoční svařák;WALDA GANG;;
-Come Again;CELESTE BUCKINGHAM;;
-Žijeme len raz;EGO FEAT. ROBERT BURIAN;;
-Vlčí srdce;JELEN;;
 Purpura;SUCHÝ JIŘÍ;;
-Má chata, můj hrad;XINDL X;;
-Proměna;XINDL X;;
-len kúsok teba.;ERYCAN;;
-R n´B soul;HORKÝŽE SLÍŽE;;
-MIESTO (feat. Ben Cristovao);I.M.T.SMILE;;
-Pokoj v duši;JANA KIRSCHNER;;
-Nikdo nejsme dokonalej;JOSEF VÁGNER;;
+R n´B soul;HORKÝŽE SLÍŽE;2007;https://open.spotify.com/track/0sxE814IZSFiGB06ozzlh7
 Protože to nevzdám;RŮZNÍ;;
-The City;SUPPORT LESBIENS;;
-Podaj mi ruku;AMO;;
-Mám krásny sen;I.M.T.SMILE;;
-Anděl;MIRAI;2016;
-Lavina;MIRO ŠMAJDA;;
-Jeden team;PAVEL CALLTA;;
-Mama mala pravdu;ZUZANA SMATANOVÁ;;
-OKAY;ALYA;;
+Mám krásny sen;I.M.T.SMILE;2009;https://open.spotify.com/track/2I1FDuqUWnjqxyPBXNpIc3
 She&039,s Mine;ANDIE J;;
-Purpura;DAMIENS;;
-Cesty II. triedy;IVAN TÁSLER & IMT SMILE;;
-Yahoda;MIRAI;;
-Milionári;RAEGO feat. NORBERT;;
-Pretty On Paper;RUE GALE & NEXT GENERATION;;
-Krtek;Buty;1993;
-Nad stádem koní;Buty;1994;
-Protestsong;Daniel Landa;1997;
-Valčík;Daniel Landa;1996;
+Purpura;DAMIENS;2003;https://open.spotify.com/track/0zUStK1Ua9N9iGbhvoVoZu
+Protestsong;Daniel Landa;1997;https://open.spotify.com/track/1HoB8g1HAQx3s9V4LrrC6X
+Valčík;Daniel Landa;1996;https://open.spotify.com/track/2UR8y3OgklHNfH0jwS7yKX
 Domov;Ego;2012;
-Žijeme len raz;Ego;2013;
+Žijeme len raz;Ego;2013;https://open.spotify.com/track/7LzBwJcyGhFzlIhdfsoS1j
 Backwards;Emma Drobná;2015;
-Rieka;Fallgrapp;2015;
 Máš mě?;Ilona Csakova;1996;
 Zvedneme kotvy;Ilona Csakova;1997;
 A je to!;Iveta Bartošová;1990;
 Andulko, vem si mě;Iveta Bartošová;1985;
-Hej pane diskžokej;Iveta Bartošová;1986;
-Knoflíky lásky;Iveta Bartošová;1985;
+Hej pane diskžokej;Iveta Bartošová;1986;https://open.spotify.com/track/0kKpg6gx9DhqguRCZDWKdz
+Knoflíky lásky;Iveta Bartošová;1985;https://open.spotify.com/track/1tVpxgZzeHoMyW0T7kbHfz
 Konec sezóny;Iveta Bartošová;1990;
 Láska je láska;Iveta Bartošová;1988;
 Malovaný džbánku;Iveta Bartošová;1987;
-Krajina Rovina;Jana Kirschner;2003;
 Peklo v nás;Jana Kirschner;2013;
-Magdaléna;Jelen;2016;
 Bola raz jedna láska;Kali;2013;
 Pije Jano, pije;Kandráčovci;2014;
-Alenka v říši divů;Karel Zich;1983;
-babyboy;Karin Ann;2022;
+Alenka v říši divů;Karel Zich;1983;https://open.spotify.com/track/6MJf1qhlOrHIDxre4HJrNG
 Girlfriend;Karin Ann;2021;
-Atentát;Kryštof;2012;
 Vzpomínky;Marek Ztracený;2013;
-Študentská láska;Marika Gombitova;1981;
-Kolej Yesterday;Michal Prokop;1984;
-Závidím;Naďa Urbánková;1972;
+Kolej Yesterday;Michal Prokop;1984;https://open.spotify.com/track/3JebS2lADtsmctXt0hmpI4
+Závidím;Naďa Urbánková;1969;https://open.spotify.com/track/56qPkxNHHAqpmViVG0IzsM
 Karel nese asi čaj;Nerez;1987;
-Masopust;Nerez;1988;
-Za tebou;Peha;2004;
+Masopust;Nerez;1988;https://open.spotify.com/track/0OnUP5WLWI397XoqE0f88T
 Elá Hop;Peter Bič Project;2012;
 Sen;Petr Muk;1997;
-Motorest;Petra Janů;1981;
+Motorest;Petra Janů;1979;https://open.spotify.com/track/0LVlZXEDzSQ4zJksobEg6g
 Hodnej kluk;Pokáč;2018;
-Bengoro;Rytmus;2015;
-Zlatokopky;Rytmus;2010;
-Dobrý deň, to som ja;Sima Martausová;2013;
-Celibát;Slza;2015;
 Lhůta;Slza;2015;
-Marie;Tomas Klus;2011;
-Pravda víťazí;Tublatanka;1988;
+Pravda víťazí;Tublatanka;1988;https://open.spotify.com/track/5WgnRQLsRbhn2ut9yzYvla
 Nashledanou;Tři sestry;1993;
-Traktor;Visací zámek;1990;
+Traktor;Visací zámek;1990;https://open.spotify.com/track/5pfD7fFiFicsF98LCS54zD
 Jednou mi fantazie zavolá;Věra Špinarová;1977;
-Jó, třešně zrály;Waldemar Matuška;1971;
-Slavíci z Madridu;Waldemar Matuška;1968;
+Jó, třešně zrály;Waldemar Matuška;1964;https://open.spotify.com/track/2uNOl7LMalyjchjKDzKqWq
 Kokosy;Yo Yo Band;1993;
 Nejde to vypnúť;Zuzana Smatanova;2004;
 Pri oltári;Zuzana Smatanova;2010;

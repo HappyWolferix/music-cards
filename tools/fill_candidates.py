@@ -173,15 +173,40 @@ class Spotify:
 
 
 # --------------------------------------------------------------------------- musicbrainz
+class Unavailable(Exception):
+    """MusicBrainz is refusing traffic; stop asking for the rest of this run."""
+
+
+# MusicBrainz goes 503 under load. Give up on it after this many consecutive
+# failures rather than spending the rest of the run retrying a dead service --
+# the affected rows get flagged and a later rerun picks them up from cache.
+MB_GIVE_UP_AFTER = 4
+_mb_failures = 0
+
+
 def musicbrainz_year(title, artist, cache):
-    """Earliest first-release-date across matching recordings, or ''."""
+    """Earliest first-release-date across matching recordings, or ''.
+
+    Raises Unavailable once the service has failed too many times in a row.
+    """
+    global _mb_failures
     key = f"mb:{title}|{artist}"
     cached = cache.get(key)
     if cached is None:
+        if _mb_failures >= MB_GIVE_UP_AFTER:
+            raise Unavailable()
         q = f'recording:"{bare_title(title)}" AND artist:"{artist}"'
         url = ("https://musicbrainz.org/ws/2/recording?fmt=json&limit=25&query="
                + urllib.parse.quote(q))
-        data = get_json(url) or {}
+        try:
+            data = get_json(url) or {}
+        except Exception as e:
+            _mb_failures += 1
+            time.sleep(MB_DELAY)
+            if _mb_failures >= MB_GIVE_UP_AFTER:
+                raise Unavailable() from e
+            return ""
+        _mb_failures = 0
         cached = [{"title": r.get("title", ""),
                    "artists": [{"name": c.get("name", "")}
                                for c in r.get("artist-credit", [])
@@ -238,8 +263,21 @@ def main():
     sp = Spotify(cid, secret, cache)
 
     lines = CSV.read_text(encoding="utf-8").splitlines()
+
+    def needs_work(line):
+        cols = line.split(";")
+        if line.strip().startswith("#") or not line.strip() or len(cols) < 4:
+            return False
+        return not ("spotify" in cols[3]
+                    and re.fullmatch(r"\d{4}", cols[2].strip()))
+
+    total = sum(1 for l in lines if needs_work(l))
+    if args.limit:
+        total = min(total, args.limit)
+
     out, review = [], []
     filled = conflicts = flagged = done = 0
+    mb_down = False
 
     for line in lines:
         s = line.strip()
@@ -257,6 +295,8 @@ def main():
             out.append(line)
             continue
         done += 1
+        label = f"{title} — {artist}"
+        print(f"[{done}/{total}] {label[:60]:<60}", end="", flush=True, file=sys.stderr)
 
         hits = []
         for a in artists(artist)[:2]:
@@ -267,10 +307,17 @@ def main():
                         key=lambda x: -x[0])
         best = ranked[0] if ranked else (0, None)
 
-        if not has_link and best[0] >= args.threshold:
+        note = []
+        if has_link:
+            note.append("link kept")
+        elif best[0] >= args.threshold:
             cols[3] = f"https://open.spotify.com/track/{best[1]['id']}"
             filled += 1
-        elif not has_link:
+            note.append(f"link ok ({best[0]})")
+        else:
+            note.append(f"LINK? best {best[0]}" if ranked else "LINK? no hits")
+
+        if not has_link and best[0] < args.threshold:
             flagged += 1
             cands = "; ".join(f"[{sc}] {h['name']} — "
                               f"{', '.join(a['name'] for a in h['artists'])} "
@@ -280,19 +327,33 @@ def main():
             review.append(f"{title};{artist}\n    {cands}")
 
         if not has_year:
-            mb = musicbrainz_year(title, artist, cache)
+            try:
+                mb = musicbrainz_year(title, artist, cache)
+            except Unavailable:
+                if not mb_down:
+                    print("\n  MusicBrainz unavailable — continuing with links only; "
+                          "rerun later to fill the remaining years.", file=sys.stderr)
+                mb_down = True
+                mb = ""
             spy = spotify_year(hits, title, artist)
             if mb:
                 cols[2] = mb
+                note.append(f"year {mb}")
                 if spy and spy != mb:
                     conflicts += 1
+                    note[-1] = f"year {mb} (Spotify says {spy})"
                     review.append(f"{title};{artist}\n    YEAR: MusicBrainz {mb} "
                                   f"vs earliest Spotify album {spy} — used {mb}")
             elif spy:
                 # no MusicBrainz match: Spotify's date may be a reissue, so flag it
                 cols[2] = spy
+                note.append(f"year {spy}?")
                 review.append(f"{title};{artist}\n    YEAR: {spy} from Spotify only "
                               f"(no MusicBrainz match) — may be a reissue")
+
+        if not has_year and not cols[2].strip():
+            note.append("YEAR?")
+        print("  " + ", ".join(note), file=sys.stderr)
 
         out.append(";".join(cols))
         cache.flush()
@@ -303,6 +364,10 @@ def main():
         REVIEW.write_text("\n".join(review) + "\n", encoding="utf-8")
     print(f"processed {done} rows: {filled} links filled, {flagged} needing a "
           f"human pick, {conflicts} year conflicts -> {REVIEW.name}")
+    if mb_down:
+        print("NOTE: MusicBrainz was unavailable, so some years are unfilled or "
+              "come from Spotify alone. Rerunning is cheap — cached rows are "
+              "not re-fetched.", file=sys.stderr)
 
 
 if __name__ == "__main__":
